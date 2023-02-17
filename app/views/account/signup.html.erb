@@ -1,0 +1,48 @@
+<h2>Create New Account:</h2>
+<%= form_with url: "/account/signup", method: :post do |form| %>
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "Error:Try Again...") %></h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>  
+  <div class="field">
+    <%= form.label :First_Name %><br>
+    <%= form.text_field :first_name %><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_Name %><br>
+    <%= form.text_field :last_name %><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :Mobile %><br>
+    <%= form.number_field :mobile %><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :Email_id %><br>
+    <%= form.text_field :email %><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :Password %><br>
+    <%= form.password_field :password %><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :Confirm_Password %><br>
+    <%= form.password_field :password_confirmation %><br>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Sign Up" %> 
+  </div>
+  <!--<div class="text sign-up-text">Already have an account? <label for="flip">Login</label></div>-->
+  </div>
+<% end %>

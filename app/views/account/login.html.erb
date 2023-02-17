@@ -1,0 +1,22 @@
+<h2>Login:</h2>
+<%= flash[:notice]%>
+<%= form_with url: "/account/login", method: :post do |form| %>
+
+  <div class="field">
+    <%= form.label :Email_id %><br>
+    <%= form.text_field :email %><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :Password %><br>
+    <%= form.password_field :password %><br>
+  </div>
+
+  <div class="actions">
+  <%= form.submit "Login" %> 
+  </div>
+  <br>
+  <div>    
+  </div>
+<% end %>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SignupClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+    <input type="checkbox" id="flip" >
+    <div class="cover">
+      <div class="front">
+        <img src="/assets/back2.jpg" alt="">
+        <div class="text">
+          <span class="text-1"><br></span>
+          <span class="text-2"></span>
+        </div>
+      </div>
+      <div class="back">
+        <img class="back1" src="assets/back1.jpg" alt="">                                                                    
+        <div class="text">
+          <span class="text-1"><br></span>
+          <span class="text-2"></span>
+        </div>
+      </div>
+    </div>
+    <%= link_to "Signup",:controller=>"account",:action=>"signup" %>
+    <%= link_to "Login",:controller=>"account",:action=>"login" %><br>
+    <%= link_to "Forget Password?",:controller=>"password",:action=>"forget_password" %>
+    <%= link_to "Reset Password",:controller=>"password",:action=>"reset_password" %><br>
+    <%= link_to "Edit Profile",:controller=>"profile",:action=>"edit_profile" %>
+    <%= yield%>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
